@@ -7,7 +7,7 @@
 
 Name:             %{?scl_prefix}%{pkg_name}
 Version:          1.0.1
-Release:          7.12%{?dist}
+Release:          7.13%{?dist}
 Summary:          Java API for XML-Based RPC (JAX-RPC) 1.1
 License:          CDDL or GPLv2 with exceptions
 Url:              http://www.jboss.org
@@ -19,7 +19,7 @@ Source0:          %{pkg_name}-%{namedversion}.tar.xz
 BuildRequires:    %{?scl_prefix}jboss-servlet-3.0-api
 BuildRequires:    %{?scl_prefix}jboss-specs-parent
 BuildRequires:    %{?scl_prefix_java_common}javapackages-tools
-BuildRequires:    %{?scl_prefix_java_common}maven-local
+BuildRequires:    %{?scl_prefix}maven-local
 BuildRequires:    %{?scl_prefix}maven-compiler-plugin
 BuildRequires:    %{?scl_prefix}maven-install-plugin
 BuildRequires:    %{?scl_prefix}maven-jar-plugin
@@ -77,6 +77,9 @@ cp -rp target/site/apidocs/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}
 %doc LICENSE
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 1.0.1-7.13
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 1.0.1-7.12
 - maven33 rebuild #2
 
